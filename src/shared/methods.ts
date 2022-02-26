@@ -45,7 +45,7 @@ const isNumber = (num: number) => {
 };
 
 const isPositiveNumber = (num: number) => {
-  return isNumber(num) || num > 0;
+  return isNumber(num) && num > 0;
 };
 
 export const isValid = (data: ProjectData) => {
