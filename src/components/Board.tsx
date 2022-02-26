@@ -11,7 +11,7 @@ interface Props {
 const Board: React.FC<Props> = ({ width, height, rectangles }) => {
   return (
     <div className='content__board'>
-      <svg width={width} height={height}>
+      <svg viewBox={`0 0 ${width} ${height}`} width={width} height={height}>
         {rectangles.map(rect => {
           return (
             <Rect
