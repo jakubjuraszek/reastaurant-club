@@ -1,4 +1,4 @@
-import { useState, FormEvent, ChangeEvent } from 'react';
+import { useState, FormEvent } from 'react';
 import { ProjectData } from '../shared/types';
 
 import Board from '../components/Board';
@@ -7,6 +7,7 @@ import Description from '../components/Description';
 import { getInit, getProject } from '../api';
 import ErrorMessage from '../components/ErrorMessage';
 import { isValid } from '../shared/methods';
+import Form from '../components/Form';
 
 const Content: React.FC = () => {
   const [projectData, setProjectData] = useState<ProjectData | null>(null);
@@ -64,18 +65,16 @@ const Content: React.FC = () => {
 
   return (
     <div className='content'>
-      <form onSubmit={onSubmit}>
-        <label htmlFor='projectId'>Project ID:</label>
-        <input
-          type='text'
-          name='projectId'
-          value={projectId}
-          onChange={(e: ChangeEvent<HTMLInputElement>) => {
-            setProjectId(e.target.value);
-          }}
-        />
-        <button type='submit'>fetch</button>
-      </form>
+      <Form
+        name='projectId'
+        value={projectId}
+        submitLabel='fetch'
+        onSubmit={onSubmit}
+        handleChange={e => {
+          setProjectId(e.target.value);
+        }}
+        inputLabel='Project ID:'
+      />
       {displayContent && (
         <Description
           projectId={projectData.id}
