@@ -1,4 +1,4 @@
-import React from 'react';
+import { memo } from 'react';
 
 interface Props {
   isVisible: boolean;
@@ -12,4 +12,4 @@ const Spinner: React.FC<Props> = ({ isVisible }) => {
   ) : null;
 };
 
-export default Spinner;
+export default memo(Spinner);

@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 interface Props {
   projectId: string;
   name: string;
@@ -14,4 +16,4 @@ const Description: React.FC<Props> = ({ projectId, name }) => {
   );
 };
 
-export default Description;
+export default memo(Description);

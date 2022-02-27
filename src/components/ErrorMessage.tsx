@@ -1,3 +1,5 @@
+import { memo } from 'react';
+
 interface Props {
   isVisible: boolean;
   message: string;
@@ -11,4 +13,4 @@ const ErrorMessage: React.FC<Props> = ({ isVisible, message }) => {
   ) : null;
 };
 
-export default ErrorMessage;
+export default memo(ErrorMessage);

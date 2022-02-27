@@ -1,4 +1,4 @@
-import { FormEvent, ChangeEvent } from 'react';
+import { FormEvent, ChangeEvent, memo } from 'react';
 
 interface Props {
   inputLabel: string;
@@ -26,4 +26,4 @@ const Form: React.FC<Props> = ({
   );
 };
 
-export default Form;
+export default memo(Form);
